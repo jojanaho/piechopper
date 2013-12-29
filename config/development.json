@@ -1,0 +1,21 @@
+{
+  "name": "development",
+  "db": {
+    "host": "localhost",
+    "port": "27017",
+    "name": "piechopper",
+    "username": "",
+    "password": "",
+    "binsDir": "/usr/bin",
+    "dataDir": "/var/lib/mongodb",
+    "backupDir": "/tmp/backupTest"
+  },
+  "webServer": {
+    "port": 8080,
+    "restartDelaySecs": 3,
+    "directory": "."
+  },
+  "googleAnalytics": false,
+  "localVendorAssets": true,
+  "removedFiles": []
+}

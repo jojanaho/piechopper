@@ -18,7 +18,7 @@ module.exports = (grunt) ->
         return grunt.file.readJSON("config/#{target}.json")
       catch e
         return null
-      
+
     config =
       deploy: getJsonConfig('deploy') or { address: '', username: '', password: ''}
       targetName: targetName
@@ -36,7 +36,7 @@ module.exports = (grunt) ->
     config.addCommonSetting('name', targetName)
     flattenObject(config)
   config = readConfig()
- 
+
 
   # Project configuration.
   grunt.initConfig
@@ -87,7 +87,7 @@ module.exports = (grunt) ->
           flatten: true
           src: ['app/vendor/jreject/browsers/*.gif']
           dest: 'build/served/vendor/images/'
-         , 
+         ,
           expand: true
           flatten: true
           src: [
@@ -272,7 +272,7 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks 'grunt-contrib-copy'
   grunt.loadNpmTasks 'grunt-preprocess'
   grunt.loadNpmTasks 'grunt-contrib-coffee'
-  grunt.loadNpmTasks 'grunt-sass'
+  grunt.loadNpmTasks 'grunt-contrib-sass'
   grunt.loadNpmTasks 'grunt-exec'
   grunt.loadNpmTasks 'grunt-contrib-jasmine'
   grunt.loadNpmTasks 'grunt-jasmine-node'
@@ -308,7 +308,7 @@ module.exports = (grunt) ->
     'sshexec:createLinkToLatest'
     'sshexec:restartServer'
   ]
-    
+
   grunt.registerTask 'browse', ['exec:browser']
   grunt.registerTask 'serve', ['exec:server']
   grunt.registerTask 'testapp', ['jasmine']

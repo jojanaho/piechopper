@@ -245,7 +245,7 @@ describe("PieChopper [000]", function(){
         }).as("proposal")
         .get("#results-section").contains("Share").click()
         .wait("@proposal")
-        .get(".modal").should("contain", "save the proposal.")
+        .get(".modal").should("contain", "We couldn't save the proposal.")
           .find("h2").should("contain", "Ooops !")
 
         // after we click on the backdrop the modal should go away

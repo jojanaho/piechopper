@@ -1,10 +1,11 @@
 config = require('./config').config
 
-express = require 'express'
+express     = require('express')
+compression = require('compression')
+
 server = express()
-server.use(express.compress())
+server.use(compression())
 server.use(express.static('./build/served/'))
-server.use(express.bodyParser())
 
 # The 404 Route (ALWAYS Keep this as the last route)
 server.get '*', (req, res) ->

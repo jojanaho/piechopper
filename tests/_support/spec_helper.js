@@ -7,7 +7,7 @@
 // become usable in every single test file.
 //
 // You can read more about custom commands here:
-// https://on.cypress.io/commands#customizing
+// https://github.com/cypress-io/cypress/wiki/commands#customizing
 // ***********************************************
 //
 // Cypress.addParentCommand("login", function(email, password){

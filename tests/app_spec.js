@@ -312,8 +312,8 @@ describe("PieChopper [000]", function(){
         cy.contains("tr", "What is the sales commission percent that is usually paid on the market?").within(function(){
           cy
             .get("td:eq(1) input").type(500)
-            .parent().should("have.class", "invalid")
-            .find(".cell-error-msg").should("contain", "Value must be smaller than 100")
+              .parent().should("have.class", "invalid")
+              .find(".cell-error-msg").should("contain", "Value must be smaller than 100")
         })
 
         cy.get("#results-section").should("contain", "Your input seems to contain errors.")

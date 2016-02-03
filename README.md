@@ -23,3 +23,9 @@ http://localhost:8080
 grunt watch
 
 ```
+
+## Running Tests in Cypress
+
+- [Install Cypress](https://docs.cypress.io/docs/installing-and-running#section-installing)
+- [Add the `examples-angular-circle-ci` folder as a project](https://docs.cypress.io/docs/installing-and-running#section-adding-projects) in Cypress.
+- Click `app_spec.js` or `Run All Tests` in the Cypress runner.

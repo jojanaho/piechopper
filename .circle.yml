@@ -11,12 +11,15 @@ dependencies:
     ## `cypress` command used below
     - npm install -g cypress
 
+    - bower install
+    - grunt
+
 test:
   pre:
     ## runs the 'start' script which
     ## boots our local app server on port 8080
     ## which cypress expects to be running
-    - npm start:
+    - grunt serve:
         background: true
   override:
     ## now run cypress in CI mode

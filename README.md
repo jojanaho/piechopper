@@ -1,4 +1,4 @@
-# PieChopper [![Circle CI](https://circleci.com/gh/cypress-io/examples-angular-circle-ci.svg?style=svg)](https://circleci.com/gh/cypress-io/examples-angular-circle-ci)
+# PieChopper [![Circle CI](https://circleci.com/gh/cypress-io/cypress-example-piechopper.svg?style=svg)](https://circleci.com/gh/cypress-io/cypress-example-piechopper)
 
 ![piechopper-gif](https://cloud.githubusercontent.com/assets/1268976/12985444/ad14159c-d0c0-11e5-8e50-2b64a1d389ac.gif)
 
@@ -29,7 +29,7 @@ grunt watch
 ## Running Tests in Cypress
 
 - [Install Cypress](https://docs.cypress.io/docs/installing-and-running#section-installing)
-- [Add the `examples-angular-circle-ci` folder as a project](https://docs.cypress.io/docs/installing-and-running#section-adding-projects) in Cypress.
+- [Add the `cypress-example-piechopper` folder as a project](https://docs.cypress.io/docs/installing-and-running#section-adding-projects) in Cypress.
 - Click `app_spec.js` or `Run All Tests` in the Cypress runner.
 - [Read how to setup Continous Integration in CircleCI](https://docs.cypress.io/docs/continuous-integration).
 

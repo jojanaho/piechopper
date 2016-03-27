@@ -1,5 +1,5 @@
 {
-  "name": "piechopper",
+  "name": "cypress-example-piechopper",
   "devDependencies": {
     "bower": "^1.7.2",
     "grunt": "~0.4.1",

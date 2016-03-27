@@ -28,8 +28,8 @@ grunt watch
 
 ## Running Tests in Cypress
 
-- [Install Cypress](https://docs.cypress.io/docs/installing-and-running#section-installing)
-- [Add the `cypress-example-piechopper` folder as a project](https://docs.cypress.io/docs/installing-and-running#section-adding-projects) in Cypress.
+- [Install Cypress](https://on.cypress.io/guides/installing-and-running#section-installing)
+- [Add the `cypress-example-piechopper` folder as a project](https://on.cypress.io/guides/installing-and-running#section-adding-projects) in Cypress.
 - Click `app_spec.js` or `Run All Tests` in the Cypress runner.
-- [Read how to setup Continous Integration in CircleCI](https://docs.cypress.io/docs/continuous-integration).
+- [Read how to setup Continous Integration in CircleCI](https://on.cypress.io/guides/continuous-integration).
 

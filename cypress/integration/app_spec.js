@@ -1,4 +1,4 @@
-describe("PieChopper [000]", function(){
+describe("PieChopper", function(){
   beforeEach(function(){
     // visit our local server running the application
     //
@@ -13,24 +13,24 @@ describe("PieChopper [000]", function(){
   // we're going to use the should command
   // https://on.cypress.io/api/should
 
-  it("has correct title [001]", function(){
+  it("has correct title", function(){
     // https://on.cypress.io/api/title
     cy.title().should("eq", "PieChopper - Chop your startup equity")
   })
 
-  it("has correct h1 [005]", function(){
+  it("has correct h1", function(){
     // https://on.cypress.io/api/get
     cy.get("h1").should("contain", "Chop your startup equity")
   })
 
-  context("About [002]", function(){
-    describe("desktop responsive [001]", function(){
-      it("is collapsed by default [003]", function(){
+  context("About", function(){
+    describe("desktop responsive", function(){
+      it("is collapsed by default", function(){
         // https://on.cypress.io/api/parents
         cy.get("#about-section").parents(".collapse").should("not.be.visible")
       })
 
-      it("expands on click [004]", function(){
+      it.only("expands on click", function(){
         // https://on.cypress.io/api/contains
         // https://on.cypress.io/api/click
         cy
@@ -42,14 +42,14 @@ describe("PieChopper [000]", function(){
       })
     })
 
-    describe("mobile responsive [002]", function(){
+    describe("mobile responsive", function(){
       beforeEach(function(){
         // https://on.cypress.io/api/viewport
         cy.viewport("iphone-6")
       })
 
 
-      it("displays hamburger menu [003]", function(){
+      it("displays hamburger menu", function(){
         cy
           // by default the About nav menu is hidden
           .contains("About").should("be.hidden")
@@ -69,12 +69,12 @@ describe("PieChopper [000]", function(){
     })
   })
 
-  context("Begin button [006]", function(){
+  context("Begin button", function(){
     // the viewport is reset before each test back to the default
     // as defined in our https://on.cypress.io/guides/configuration
     // so we are back to the desktop resolution
 
-    it("scrolls to 'How to chop it? [008]", function(){
+    it("scrolls to 'How to chop it?", function(){
       // scroll behavior is difficult to test - but with some
       // basic DOM knowledge we can do this pretty easily
       //
@@ -95,8 +95,8 @@ describe("PieChopper [000]", function(){
     })
   })
 
-  context("How to chop it? [00a]", function(){
-    it("defaults with Company Roles [009]", function(){
+  context("How to chop it?", function(){
+    it("defaults with Company Roles", function(){
       cy
         .get(".carousel-inner .active").should("contain", "Company Roles")
         .get(".model-selector-desc").should("contain", "The method is inspired by the Foundrs.com website.")
@@ -105,7 +105,7 @@ describe("PieChopper [000]", function(){
           .find("a").should("have.attr", "href", "http://foundrs.com/")
     })
 
-    it("can change carousel to Market Value [00b]", function(){
+    it("can change carousel to Market Value", function(){
       cy
         .get(".carousel-control.right").click()
         .get(".carousel-inner .active").should("contain", "Market Value")
@@ -113,7 +113,7 @@ describe("PieChopper [000]", function(){
           .find("a").should("have.attr", "href", "http://www.slicingpie.com/")
     })
 
-    it("can change carousel to 'Relative Important' using cy.wait [00d]", function(){
+    it("can change carousel to 'Relative Important' using cy.wait", function(){
       cy
         .get(".carousel-control.right").click()
         .get(".carousel-inner .active").should("contain", "Market Value")
@@ -125,7 +125,7 @@ describe("PieChopper [000]", function(){
           .find("a").should("have.attr", "href").and("include", "www.andrew.cmu.edu/user/fd0n/")
     })
 
-    it("can loop around forward + backwards [00c]", function(){
+    it("can loop around forward + backwards", function(){
       cy
         .get(".carousel-control.right").click()
         .get(".carousel-inner .active").should("contain", "Market Value")
@@ -153,7 +153,7 @@ describe("PieChopper [000]", function(){
         })
     })
 
-    it("scrolls to How do you contribute? [00e]", function(){
+    it("scrolls to How do you contribute?", function(){
       // this shows an alternate approach to testing whether an
       // element has been scrolled.
       //
@@ -172,15 +172,15 @@ describe("PieChopper [000]", function(){
     })
   })
 
-  context("How do you contribute? [00i]", function(){
+  context("How do you contribute?", function(){
     beforeEach(function(){
       cy.get("#contrib-section").as("contrib")
     })
 
     // the form changes based on which algorithm
     // has been selected with 'Company Roles' being the default
-    describe("Company Roles [00l]", function(){
-      it("can add a Member C [00h]", function(){
+    describe("Company Roles", function(){
+      it("can add a Member C", function(){
         // https://on.cypress.io/api/within
         // do all of our work within this section
         cy.get("@contrib").within(function(){
@@ -194,7 +194,7 @@ describe("PieChopper [000]", function(){
         })
       })
 
-      it("can remove a Member C [00m]", function(){
+      it("can remove a Member C", function(){
         cy.get("@contrib").within(function(){
           cy
             .get(".member-add-btn").click()
@@ -205,7 +205,7 @@ describe("PieChopper [000]", function(){
         })
       })
 
-      it("hides button at max num of columns [00b]", function(){
+      it("hides button at max num of columns", function(){
         cy
           .get("#contrib-section").find("table").find("th").should("have.length", 3)
           .get(".member-add-btn")
@@ -213,7 +213,7 @@ describe("PieChopper [000]", function(){
             .should("be.hidden")
       })
 
-      it("calculates the values between members A + B [00n]", function(){
+      it("calculates the values between members A + B", function(){
         // using contains here to select the <tr> with this content
         // so its much easier to understand which row we're focused on
 
@@ -268,7 +268,7 @@ describe("PieChopper [000]", function(){
           })
       })
 
-      it("updates Member A + B values in #slice-graph [00o]", function(){
+      it("updates Member A + B values in #slice-graph", function(){
         cy.contains("tr", "How much does the member contribute to the product features?").within(function(){
           cy
             .get("td:eq(1) select").select("Little")
@@ -284,13 +284,13 @@ describe("PieChopper [000]", function(){
       })
     })
 
-    describe("Market Value [00s]", function(){
+    describe("Market Value", function(){
       beforeEach(function(){
         // swap to market value
         cy.get(".carousel-control.right").click()
       })
 
-      it("updates Member A + B's value [00r]", function(){
+      it("updates Member A + B's value", function(){
         cy.contains("tr", "How much cash is the member investing?").within(function(){
 
           // https://on.cypress.io/api/type
@@ -308,7 +308,7 @@ describe("PieChopper [000]", function(){
           .get("tfoot td:eq(2)").should("contain", "41.2 %")
       })
 
-      it("validates input and displays errors [00t]", function(){
+      it("validates input and displays errors", function(){
         cy.contains("tr", "What is the sales commission percent that is usually paid on the market?").within(function(){
           cy
             .get("td:eq(1) input").type(500)
@@ -321,7 +321,7 @@ describe("PieChopper [000]", function(){
     })
   })
 
-  context("Sharing Results [00u]", function(){
+  context("Sharing Results", function(){
     beforeEach(function(){
       // We want to start a server before each test
       // to control nerwork requests and responses
@@ -331,7 +331,7 @@ describe("PieChopper [000]", function(){
     })
 
     // simulate the server failing to respond to the share proposal
-    it("displays error message in modal when server errors [00v]", function(){
+    it("displays error message in modal when server errors", function(){
       // https://on.cypress.io/api/route
       cy
         .route({
@@ -351,7 +351,7 @@ describe("PieChopper [000]", function(){
         .get(".modal-backdrop").click().should("not.exist")
     })
 
-    it("sends up correct request JSON [00w]", function(){
+    it("sends up correct request JSON", function(){
       // https://on.cypress.io/api/route
       cy
         .route("POST", /proposals/, {}).as("proposal")
@@ -370,7 +370,7 @@ describe("PieChopper [000]", function(){
         })
     })
 
-    it("displays share link on successful response [00x]", function(){
+    it("displays share link on successful response", function(){
       var id = "12345-foo-bar"
 
       cy

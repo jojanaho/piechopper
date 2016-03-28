@@ -1,4 +1,4 @@
-## our React TodoMVC app is written
+## our PieChopper is written
 ## in node so thats what we select.
 ## Cypress is agnostic to your apps
 ## backend language though.
@@ -24,11 +24,9 @@ before_script:
   ## which cypress expects to be running
   ## -----------------------------------
   ## the '-- --silent' passes arguments
-  ## to http-server which silences its output
+  ## to grunt serve which silences its output
   ## else our travis logs would be cluttered
-  ## with output from HTTP requests
-  ## https://docs.npmjs.com/cli/start
-  ## https://github.com/indexzero/http-server
+  ## with output
   ## ---------------------------------------
   ## we use the '&' ampersand which tells
   ## travis to run this process in the background

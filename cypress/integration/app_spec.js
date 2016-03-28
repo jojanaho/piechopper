@@ -30,7 +30,7 @@ describe("PieChopper", function(){
         cy.get("#about-section").parents(".collapse").should("not.be.visible")
       })
 
-      it.only("expands on click", function(){
+      it("expands on click", function(){
         // https://on.cypress.io/api/contains
         // https://on.cypress.io/api/click
         cy

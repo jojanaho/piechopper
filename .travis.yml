@@ -16,7 +16,7 @@ install:
   - npm install -g cypress-cli
 
   - bower install
-  - grunt
+  - grunt --force
 
 before_script:
   ## runs the 'start' script which

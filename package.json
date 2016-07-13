@@ -4,7 +4,8 @@
     "postinstall": "bower install",
     "build": "grunt",
     "server": "grunt serve",
-    "watch": "grunt watch"
+    "watch": "grunt watch",
+    "test": "grunt serve & cypress run"
   },
   "devDependencies": {
     "bower": "^1.7.2",

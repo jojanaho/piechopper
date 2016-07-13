@@ -1,5 +1,11 @@
 {
   "name": "cypress-example-piechopper",
+  "scripts": {
+    "postinstall": "bower install",
+    "build": "grunt",
+    "server": "grunt serve",
+    "watch": "grunt watch"
+  },
   "devDependencies": {
     "bower": "^1.7.2",
     "grunt": "~0.4.1",

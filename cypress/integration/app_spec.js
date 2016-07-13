@@ -356,7 +356,7 @@ describe("PieChopper", function(){
       cy
         .route("POST", /proposals/, {}).as("proposal")
         .get("#results-section").contains("Share").click()
-        .wait("@proposal").its("requestJSON").should(function(json){
+        .wait("@proposal").its("requestBody").should(function(json){
           expect(json.userId).to.be.a("string")
 
           // expect there to be 3 keys in models

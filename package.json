@@ -3,7 +3,7 @@
   "scripts": {
     "postinstall": "bower install",
     "build": "grunt",
-    "server": "grunt serve",
+    "start": "grunt serve",
     "watch": "grunt watch",
     "test": "grunt serve & cypress run"
   },

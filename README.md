@@ -16,7 +16,7 @@ npm install
 npm run build
 
 ## start the local webserver
-npm run server
+npm start
 
 ## if you modify the app source files and
 ## want the files to auto build (optional)

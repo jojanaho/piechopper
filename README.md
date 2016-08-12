@@ -1,7 +1,5 @@
 # PieChopper
 
-Source code for the site [piechopper.com](http://piechopper.com/)
-
 ## How to Install Development Environment
 
 - Install [node.js](http://nodejs.org/)

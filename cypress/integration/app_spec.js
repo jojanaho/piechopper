@@ -1,12 +1,13 @@
 describe("PieChopper", function(){
   beforeEach(function(){
-    // visit our local server running the application
+    // Visiting before each test ensures the app
+    // gets reset to a clean state before each test
     //
-    // visiting before each test ensures the app
-    // gets reset to a clean state
+    // We've set our baseUrl to be http://localhost:8080
+    // which is automatically prepended to cy.visit
     //
     // https://on.cypress.io/api/visit
-    cy.visit("http://localhost:8080")
+    cy.visit("/")
   })
 
   // to make assertions throughout our test

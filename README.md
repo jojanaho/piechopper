@@ -2,6 +2,18 @@
 
 ![piechopper-gif](https://cloud.githubusercontent.com/assets/1268976/12985444/ad14159c-d0c0-11e5-8e50-2b64a1d389ac.gif)
 
+## Housekeeping
+
+You will need to have ruby and sass in your PATH before you can run through the Installing and Development sections.  The following commands will work for OSX.
+
+```bash
+## install ruby
+brew install ruby
+
+## install sass
+gem install sass
+```
+
 ## Installing
 
 ```bash

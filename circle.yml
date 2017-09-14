@@ -5,15 +5,14 @@ machine:
 dependencies:
   pre:
     - npm install
-    - bower install
-    - grunt
+    - npm run build
 
 test:
   pre:
     ## runs the 'start' script which
     ## boots our local app server on port 8080
     ## which cypress expects to be running
-    - grunt serve:
+    - npm start -- --silent:
         background: true
   override:
     ## now run cypress headlessly

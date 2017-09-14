@@ -7,13 +7,9 @@ language: node_js
 node_js:
   - 5.3
 
-before_install:
-  - gem install sass
-
 install:
   - npm install
-  - bower install
-  - grunt
+  - npm run build
 
 before_script:
   ## runs the 'start' script which
@@ -28,7 +24,7 @@ before_script:
   ## we use the '&' ampersand which tells
   ## travis to run this process in the background
   ## else it would block execution and hang travis
-  - grunt serve --silent &
+  - npm start -- --silent &
 
 script:
   ## now run cypress headlessly

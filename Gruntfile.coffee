@@ -205,7 +205,7 @@ module.exports = (grunt) ->
       browser:
         command: 'chrome http://localhost:8080 &'
       server:
-        command: "./node_modules/nodemon/nodemon.js --delay 2 build/server/src/server.js"
+        command: "./node_modules/.bin/nodemon --delay 2 build/server/src/server.js"
 
     sshconfig:
       server:

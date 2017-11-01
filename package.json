@@ -4,6 +4,8 @@
     "postinstall": "bower install",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",
+    "cypress:version": "cypress version",
+    "cypress:verify": "cypress verify",
     "build": "grunt",
     "postbuild": "node-sass app/style/style.scss build/served/app/css/style.css",
     "start": "grunt serve",

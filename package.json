@@ -8,9 +8,11 @@
     "cypress:verify": "cypress verify",
     "build": "grunt",
     "postbuild": "node-sass app/style/style.scss build/served/app/css/style.css",
+    "prestart": "npm run build",
     "start": "grunt serve",
     "server": "nodemon --delay 2 build/server/src/server.js",
     "watch": "grunt watch",
+    "pretest": "npm run build",
     "test": "run-p --race server cypress:run"
   },
   "devDependencies": {

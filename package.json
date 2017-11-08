@@ -13,7 +13,9 @@
     "server": "nodemon --delay 2 build/server/src/server.js",
     "watch": "grunt watch",
     "pretest": "npm run build",
-    "test": "run-p --race server cypress:run"
+    "test": "run-p --race server cypress:run",
+    "pretest:ci": "npm run build",
+    "test:ci": "run-p --race server cypress:run"
   },
   "devDependencies": {
     "bower": "^1.7.2",

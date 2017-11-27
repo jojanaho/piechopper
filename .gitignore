@@ -8,3 +8,5 @@ npm-debug.log
 config/production.json
 config/staging.json
 config/deploy.json
+.sass-cache
+cypress/videos

@@ -18,7 +18,7 @@ module.exports = (grunt) ->
         return grunt.file.readJSON("config/#{target}.json")
       catch e
         return null
-      
+
     config =
       deploy: getJsonConfig('deploy') or { address: '', username: '', password: ''}
       targetName: targetName
@@ -36,7 +36,7 @@ module.exports = (grunt) ->
     config.addCommonSetting('name', targetName)
     flattenObject(config)
   config = readConfig()
- 
+
 
   # Project configuration.
   grunt.initConfig
@@ -87,7 +87,7 @@ module.exports = (grunt) ->
           flatten: true
           src: ['app/vendor/jreject/browsers/*.gif']
           dest: 'build/served/vendor/images/'
-         , 
+         ,
           expand: true
           flatten: true
           src: [
@@ -175,22 +175,11 @@ module.exports = (grunt) ->
             'build/preprocess/app/coffee/**/*.coffee'
             '!build/preprocess/app/coffee/**/*Spec.coffee'
           ]
-      appTest:
-        files:
-          'build/served/app/js/test.js': [
-            'build/preprocess/app/coffee/**/*Spec.coffee'
-          ]
       server:
         files:
           'build/server/src/server.js': 'build/preprocess/server/src/server.coffee'
           'build/server/src/db.js': 'build/preprocess/server/src/db.coffee'
           'build/server/src/config.js': 'build/preprocess/server/src/config.coffee'
-      serverTest:
-        files:
-          'build/server/src/test.js': 'build/preprocess/server/src/**/*Spec.coffee'
-      e2e:
-        files:
-          'build/e2e.js': 'build/preprocess/e2e/**/*.coffee'
 
     ngmin:
       app:
@@ -216,28 +205,7 @@ module.exports = (grunt) ->
       browser:
         command: 'chrome http://localhost:8080 &'
       server:
-        command: "./node_modules/nodemon/nodemon.js --delay 2 build/server/src/server.js"
-      casper:
-        command: "casperjs test build/e2e.js"
-
-    jasmine:
-      app:
-        src: 'build/served/app/js/app.js'
-        options:
-          specs: 'build/served/app/js/test.js',
-          vendor: [
-            'build/served/vendor/js/jquery.min.js'
-            'build/served/vendor/js/angular.min.js'
-            'build/served/vendor/js/angular-sanitize.min.js'
-            'build/served/vendor/js/angular-ui.min.js'
-            'build/served/vendor/js/ui-bootstrap-tpls.min.js'
-            'build/served/vendor/js/d3.min.js'
-            'build/served/vendor/js/angular-mocks.js'
-          ]
-
-    jasmine_node:
-      projectRoot: 'build/server/src/'
-      specNameMatcher: ".*est.*"
+        command: "./node_modules/.bin/nodemon --delay 2 build/server/src/server.js"
 
     sshconfig:
       server:
@@ -272,10 +240,7 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks 'grunt-contrib-copy'
   grunt.loadNpmTasks 'grunt-preprocess'
   grunt.loadNpmTasks 'grunt-contrib-coffee'
-  grunt.loadNpmTasks 'grunt-sass'
   grunt.loadNpmTasks 'grunt-exec'
-  grunt.loadNpmTasks 'grunt-contrib-jasmine'
-  grunt.loadNpmTasks 'grunt-jasmine-node'
   grunt.loadNpmTasks 'grunt-ssh'
   grunt.loadNpmTasks 'grunt-ngmin'
   grunt.loadNpmTasks 'grunt-contrib-uglify'
@@ -290,13 +255,9 @@ module.exports = (grunt) ->
     'copy:appHtmls'
     'copy:serverMgmt'
     'coffee:app'
-    'coffee:appTest'
     'coffee:server'
-    'coffee:serverTest'
-    'coffee:e2e'
     'ngmin:app'
     'uglify:app'
-    'sass:app'
     'cssmin:app'
     'clean:postBuild'
     'clean:distClean'
@@ -308,13 +269,7 @@ module.exports = (grunt) ->
     'sshexec:createLinkToLatest'
     'sshexec:restartServer'
   ]
-    
+
   grunt.registerTask 'browse', ['exec:browser']
   grunt.registerTask 'serve', ['exec:server']
-  grunt.registerTask 'testapp', ['jasmine']
-  grunt.registerTask 'testserver', ['jasmine_node']
   grunt.registerTask 'default', ['build']
-  grunt.registerTask 'testServer', ['jasmine_node']
-  grunt.registerTask 'testApp', ['jasmine']
-  grunt.registerTask 'testE2E', ['exec:casper']
-  grunt.registerTask 'test', ['testServer', 'testApp', 'testE2E']

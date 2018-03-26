@@ -32,7 +32,7 @@
     "grunt-ngmin": "0.0.3",
     "grunt-preprocess": "~3.0.1",
     "grunt-ssh": "~0.9.1",
-    "node-sass": "^4.5.3",
+    "node-sass": "^4.8.3",
     "nodemon": "1.15.0",
     "npm-run-all": "^4.1.1"
   },

@@ -27,5 +27,21 @@
   "labels": [
     "type: dependencies",
     "renovate"
+  ],
+  "ignoreDeps": [
+    "grunt",
+    "grunt-cli",
+    "grunt-contrib-clean",
+    "grunt-contrib-coffee",
+    "grunt-contrib-copy",
+    "grunt-contrib-cssmin",
+    "grunt-contrib-uglify",
+    "grunt-contrib-watch",
+    "grunt-exec",
+    "grunt-ngmin",
+    "grunt-preprocess",
+    "grunt-ssh",
+    "node-sass",
+    "nodemon"
   ]
 }

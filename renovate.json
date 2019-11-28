@@ -3,7 +3,7 @@
     "config:base"
   ],
   "automerge": true,
-  "commitMessage": "{{semanticPrefix}}Update {{depName}} to {{newVersion}} 🌟",
+  "commitMessage": "{{semanticPrefix}}{{#if isPin}}Pin deps or locks{{else}}Update {{depName}} to {{newVersion}} 🌟{{/if}}",
   "prTitle": "{{semanticPrefix}}{{#if isPin}}Pin{{else}}Update{{/if}} dependency {{depName}} to version {{newVersion}} 🌟",
   "major": {
     "automerge": false

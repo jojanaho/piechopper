@@ -1,3 +1,5 @@
+
+
 describe('PieChopper', function(){
   beforeEach(function(){
     // Visiting before each test ensures the app
@@ -81,12 +83,7 @@ describe('PieChopper', function(){
 
       // https://on.cypress.io/invoke
       // https://on.cypress.io/then
-      cy.get('#model-selection-section').invoke('offset').then(function(offset){
-          // using a cy.then here to create a closure of the offset
-
-          // https://on.cypress.io/window
-          cy.window().its('scrollY').should('eq', offset.top)
-        })
+      cy.get('#model-selection-section').should(beScrolledToTop )
     })
   })
 
@@ -370,3 +367,9 @@ describe('PieChopper', function(){
     })
   })
 })
+
+const beScrolledToTop = ($el) => {
+  const offset = $el.offset()
+  const win = $el[0].ownerDocument.defaultView
+  expect(win.scrollY).closeTo(offset.top, 1)
+}
